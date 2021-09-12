@@ -2,7 +2,7 @@
 {
     font-family: Kumbh Sans;
     font-style: normal;
-
+    margin: 0;
 }
 .container{ 
     position: relative;
@@ -10,10 +10,11 @@
     justify-content: center;
     align-items: center;
     background: #19A1AE;
-    height: 720px;
+    height: 100vh;
     overflow: hidden;
 }
 .card {
+    position: relative;
     width: 350px;
     height: 374px;
     background: #FFFFFF;
@@ -101,15 +102,56 @@ hr {
     letter-spacing: 1.5px;
     color: #6B7082;
 }
-.oval_top {
-    position: absolute;
-    top: -10px;
-    left: -65px;
-    z-index: 1;
+.oval_top{
+    position: fixed;
+    width: 978px;
+    height: 976px;
+    right: 52%;
+    bottom: 35%;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(9, 137, 180, 0.0001) 0.78%, #53FFEE 99.94%);
+    mix-blend-mode: normal;
+    opacity: 0.9;
+    transform: rotate(-135deg);
 }
-.oval_bottom {
-    position: absolute;
-    top: 175px;
-    left: 420px;
-    z-index: 1;
+.oval_bottom{
+    position: fixed;
+    width: 978px;
+    height: 976px;
+    left:48%;
+    top: 53%;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(9, 137, 180, 0.0001) 0.78%, #53FFEE 99.94%);
+    mix-blend-mode: normal;
+    opacity: 0.25;
+    transform: matrix(0.71, -0.71, -0.71, -0.71, 0, 0);
+}
+
+@media (max-width: 2400px) {
+    .mask img.hidden {
+        display: none;        
+    }
+    .mask img.visible {
+        display: block;        
+    }
+}
+
+@media (max-width: 375px) {
+    .card{
+        width: 320px;
+    }
+    .oval_bottom {
+        left: 33%;
+        top: 45%;
+    }
+    .mask img.visible {
+        display: none;        
+    }
+    .mask img.hidden {
+        display:block;        
+    }
+    .oval_bottom {
+        right: 30%;
+        bottom: 55%;
+    }
 }
